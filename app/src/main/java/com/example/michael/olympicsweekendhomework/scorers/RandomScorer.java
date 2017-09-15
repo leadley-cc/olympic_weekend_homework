@@ -1,5 +1,6 @@
 package com.example.michael.olympicsweekendhomework.scorers;
 
+import com.example.michael.olympicsweekendhomework.Score;
 import com.example.michael.olympicsweekendhomework.competitors.Competitor;
 
 import java.util.Random;
@@ -16,7 +17,7 @@ public class RandomScorer implements Scorer {
     }
 
     @Override
-    public int calculateScore(Competitor ignored) {
-        return random.nextInt(100);
+    public Score calculateScore(Competitor competitor) {
+        return new Score(competitor, random.nextInt(100));
     }
 }

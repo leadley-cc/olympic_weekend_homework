@@ -1,5 +1,6 @@
 package com.example.michael.olympicsweekendhomework.scorers;
 
+import com.example.michael.olympicsweekendhomework.Score;
 import com.example.michael.olympicsweekendhomework.competitors.Competitor;
 
 /**
@@ -7,5 +8,5 @@ import com.example.michael.olympicsweekendhomework.competitors.Competitor;
  */
 
 public interface Scorer {
-    int calculateScore(Competitor competitor);
+    Score calculateScore(Competitor competitor);
 }
