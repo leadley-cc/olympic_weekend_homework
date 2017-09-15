@@ -1,5 +1,6 @@
 package com.example.michael.olympicsweekendhomework.competitors;
 
+import com.example.michael.olympicsweekendhomework.Medal;
 import com.example.michael.olympicsweekendhomework.SkillType;
 
 import java.util.*;
@@ -12,11 +13,13 @@ public class Team implements Competitor {
     private String name;
     private String country;
     private List<Athlete> athletes;
+    private List<Medal> medals;
 
     public Team(String name, String country, List<Athlete> athletes) {
         this.name = name;
         this.country = country;
         this.athletes = athletes;
+        this.medals = new ArrayList<>();
     }
 
     @Override
@@ -52,4 +55,17 @@ public class Team implements Competitor {
         }
         return totalSkillValue;
     }
+
+    // The other implementation might cause counting issues in future
+    @Override
+    public void awardMedal(Medal medal) {
+        medals.add(medal);
+    }
+
+//    @Override
+//    public void awardMedal(Medal medal) {
+//        for (Athlete athlete : athletes) {
+//            athlete.awardMedal(medal);
+//        }
+//    }
 }

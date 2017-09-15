@@ -1,5 +1,6 @@
 package com.example.michael.olympicsweekendhomework.competitors;
 
+import com.example.michael.olympicsweekendhomework.Medal;
 import com.example.michael.olympicsweekendhomework.SkillType;
 
 import java.util.Map;
@@ -16,4 +17,6 @@ public interface Competitor {
     Map<SkillType, Integer> getSkills();
 
     int getSkill(SkillType skill);
+
+    void awardMedal(Medal medal);
 }

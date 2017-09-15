@@ -1,5 +1,6 @@
 package com.example.michael.olympicsweekendhomework.competitors;
 
+import com.example.michael.olympicsweekendhomework.Medal;
 import com.example.michael.olympicsweekendhomework.SkillType;
 
 import java.util.*;
@@ -12,11 +13,13 @@ public class Athlete implements Competitor {
     private String name;
     private String country;
     private Map<SkillType,Integer> skills;
+    private List<Medal> medals;
 
     public Athlete(String name, String country, Map<SkillType, Integer> skills) {
         this.name = name;
         this.country = country;
         this.skills = skills;
+        this.medals = new ArrayList<>();
     }
 
     @Override
@@ -37,5 +40,10 @@ public class Athlete implements Competitor {
     @Override
     public int getSkill(SkillType skill) {
         return skills.get(skill);
+    }
+
+    @Override
+    public void awardMedal(Medal medal) {
+        medals.add(medal);
     }
 }
