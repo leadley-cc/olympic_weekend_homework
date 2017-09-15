@@ -35,6 +35,7 @@ public class Team implements Competitor {
         for (SkillType skill : SkillType.values()) {
             int totalSkillValue = 0;
             for (Athlete athlete : athletes) {
+                if (!athlete.getSkills().containsKey(skill)) continue;
                 totalSkillValue += athlete.getSkill(skill);
             }
             skills.put(skill, totalSkillValue);
@@ -46,6 +47,7 @@ public class Team implements Competitor {
     public int getSkill(SkillType skill) {
         int totalSkillValue = 0;
         for (Athlete athlete : athletes) {
+            if (!athlete.getSkills().containsKey(skill)) continue;
             totalSkillValue += athlete.getSkill(skill);
         }
         return totalSkillValue;
