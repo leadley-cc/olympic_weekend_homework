@@ -5,6 +5,7 @@ import com.example.michael.olympicsweekendhomework.SkillType;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ public class AthleteTest {
 
     @Before
     public void before() {
-        Map<SkillType,Integer> skills = new HashMap<>();
+        Map<SkillType,Integer> skills = new EnumMap<>(SkillType.class);
         skills.put(ACCURACY, 79);
         athlete = new Athlete("Michael", "GB", skills);
     }

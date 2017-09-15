@@ -28,7 +28,9 @@ public class Event {
         return competitors;
     }
 
-    public Competitor calculateWinner() {
+    public Competitor awardMedals() {
+        Competitor winner = null;
+
         return null;
     }
 }

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -25,11 +26,11 @@ public class TeamTest {
 
     @Before
     public void before() {
-        Map<SkillType,Integer> skills1 = new HashMap<>();
+        Map<SkillType,Integer> skills1 = new EnumMap<>(SkillType.class);
         skills1.put(ACCURACY, 79);
         athlete1 = new Athlete("Michael", "GB", skills1);
 
-        Map<SkillType,Integer> skills2 = new HashMap<>();
+        Map<SkillType,Integer> skills2 = new EnumMap<>(SkillType.class);
         skills2.put(ACCURACY, 71);
         athlete2 = new Athlete("Kyle", "GB", skills2);
 

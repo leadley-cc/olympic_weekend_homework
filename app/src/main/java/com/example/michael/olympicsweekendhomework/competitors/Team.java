@@ -31,7 +31,7 @@ public class Team implements Competitor {
 
     @Override
     public Map<SkillType, Integer> getSkills() {
-        HashMap<SkillType, Integer> skills = new HashMap<>();
+        EnumMap<SkillType, Integer> skills = new EnumMap<>(SkillType.class);
         for (SkillType skill : SkillType.values()) {
             int totalSkillValue = 0;
             for (Athlete athlete : athletes) {
