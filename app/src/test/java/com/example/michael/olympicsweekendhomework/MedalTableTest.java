@@ -19,7 +19,7 @@ public class MedalTableTest {
 
     @Test
     public void medalListsStartNull() {
-        assertNull( MedalTable.getMedalsForCountry("GB") );
+        assertEquals( 0, MedalTable.getMedalsForCountry("GB").size() );
     }
 
     @Test
