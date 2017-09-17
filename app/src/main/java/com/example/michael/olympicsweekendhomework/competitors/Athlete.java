@@ -51,4 +51,16 @@ public class Athlete implements Competitor {
     public void awardMedal(Medal medal) {
         medals.add(medal);
     }
+
+    public static Map<SkillType, Integer> generateSkillsMap(
+            int accuracy, int agility, int speed, int stamina, int strength
+    ) {
+        Map<SkillType, Integer> skills = new EnumMap<>(SkillType.class);
+        skills.put(SkillType.ACCURACY, accuracy);
+        skills.put(SkillType.AGILITY, agility);
+        skills.put(SkillType.SPEED, speed);
+        skills.put(SkillType.STAMINA, stamina);
+        skills.put(SkillType.STRENGTH, strength);
+        return skills;
+    }
 }
