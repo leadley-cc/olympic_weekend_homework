@@ -4,18 +4,18 @@ package com.example.michael.olympicsweekendhomework;
  * Created by michael on 15/09/2017.
  */
 
-enum MedalType {
-    GOLD(1),
+public enum MedalType {
+    GOLD(3),
     SILVER(2),
-    BRONZE(3);
+    BRONZE(1);
 
-    private int place;
+    private int points;
 
-    MedalType(int place) {
-        this.place = place;
+    MedalType(int points) {
+        this.points = points;
     }
 
-    public int getPlace() {
-        return place;
+    public int getPoints() {
+        return points;
     }
 }
