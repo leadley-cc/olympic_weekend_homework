@@ -43,4 +43,17 @@ public final class MedalTable {
         }
         return totalPoints;
     }
+
+    public static String getLeadingCountry() {
+        int winningPoints = 0;
+        String winner = "No winner found";
+        for (String country : table.keySet()) {
+            int countryPoints = getPointsForCountry(country);
+            if (countryPoints > winningPoints) {
+                winningPoints = countryPoints;
+                winner = country;
+            }
+        }
+        return winner;
+    }
 }
