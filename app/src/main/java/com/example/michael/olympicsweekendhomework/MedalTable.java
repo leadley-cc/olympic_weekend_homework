@@ -30,7 +30,7 @@ public final class MedalTable {
             List<Medal> medalList = table.get(country);
             return new ArrayList<>(medalList);
         }
-        return null;
+        return Collections.emptyList();
     }
 
     public static int getPointsForCountry(String country) {
