@@ -36,8 +36,17 @@ public class Event {
             scores.add( scorer.calculateScore(competitor) );
         }
         // pollLast gets and removes the highest Score since a TreeSet is in ascending order
-        scores.pollLast().getCompetitor().awardMedal( new Medal(GOLD) );
-        scores.pollLast().getCompetitor().awardMedal( new Medal(SILVER) );
-        scores.pollLast().getCompetitor().awardMedal( new Medal(BRONZE) );
+        Competitor firstPlace = scores.pollLast().getCompetitor();
+        Competitor secondPlace = scores.pollLast().getCompetitor();
+        Competitor thirdPlace = scores.pollLast().getCompetitor();
+
+        awardAndRecordMedal(firstPlace, new Medal(GOLD));
+        awardAndRecordMedal(secondPlace, new Medal(SILVER));
+        awardAndRecordMedal(thirdPlace, new Medal(BRONZE));
+    }
+
+    private void awardAndRecordMedal(Competitor competitor, Medal medal) {
+        competitor.awardMedal(medal);
+        MedalTable.addMedal(competitor.getCountry(), medal);
     }
 }
