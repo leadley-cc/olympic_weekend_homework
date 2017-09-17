@@ -43,6 +43,11 @@ public class Athlete implements Competitor {
     }
 
     @Override
+    public List<Medal> getMedals() {
+        return medals;
+    }
+
+    @Override
     public void awardMedal(Medal medal) {
         medals.add(medal);
     }

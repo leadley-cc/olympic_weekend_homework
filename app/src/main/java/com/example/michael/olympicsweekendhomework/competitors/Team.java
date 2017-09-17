@@ -56,6 +56,11 @@ public class Team implements Competitor {
         return totalSkillValue;
     }
 
+    @Override
+    public List<Medal> getMedals() {
+        return medals;
+    }
+
     // The other implementation might cause counting issues in future
     @Override
     public void awardMedal(Medal medal) {

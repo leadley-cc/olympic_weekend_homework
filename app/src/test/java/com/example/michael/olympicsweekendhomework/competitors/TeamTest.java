@@ -1,5 +1,6 @@
 package com.example.michael.olympicsweekendhomework.competitors;
 
+import com.example.michael.olympicsweekendhomework.Medal;
 import com.example.michael.olympicsweekendhomework.SkillType;
 
 import org.junit.Before;
@@ -12,6 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.michael.olympicsweekendhomework.MedalType.GOLD;
 import static com.example.michael.olympicsweekendhomework.SkillType.ACCURACY;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -56,6 +58,18 @@ public class TeamTest {
     @Test
     public void getSkill() {
         assertEquals(150, team.getSkill(ACCURACY));
+    }
+
+    @Test
+    public void getMedals() {
+        assertNotNull(team.getMedals());
+        assertEquals(0, team.getMedals().size());
+    }
+
+    @Test
+    public void awardMedal() {
+        team.awardMedal(new Medal(GOLD));
+        assertEquals(1, team.getMedals().size());
     }
 
 }

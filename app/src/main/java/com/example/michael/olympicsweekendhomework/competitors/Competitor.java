@@ -3,6 +3,7 @@ package com.example.michael.olympicsweekendhomework.competitors;
 import com.example.michael.olympicsweekendhomework.Medal;
 import com.example.michael.olympicsweekendhomework.SkillType;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -17,6 +18,8 @@ public interface Competitor {
     Map<SkillType, Integer> getSkills();
 
     int getSkill(SkillType skill);
+
+    List<Medal> getMedals();
 
     void awardMedal(Medal medal);
 }

@@ -1,5 +1,7 @@
 package com.example.michael.olympicsweekendhomework.competitors;
 
+import com.example.michael.olympicsweekendhomework.Medal;
+import com.example.michael.olympicsweekendhomework.MedalType;
 import com.example.michael.olympicsweekendhomework.SkillType;
 
 import org.junit.Before;
@@ -9,6 +11,7 @@ import java.util.EnumMap;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.michael.olympicsweekendhomework.MedalType.GOLD;
 import static org.junit.Assert.*;
 import static com.example.michael.olympicsweekendhomework.SkillType.*;
 
@@ -45,4 +48,15 @@ public class AthleteTest {
         assertEquals(79, athlete.getSkill(ACCURACY));
     }
 
+    @Test
+    public void getMedals() {
+        assertNotNull(athlete.getMedals());
+        assertEquals(0, athlete.getMedals().size());
+    }
+
+    @Test
+    public void awardMedal() {
+        athlete.awardMedal(new Medal(GOLD));
+        assertEquals(1, athlete.getMedals().size());
+    }
 }
