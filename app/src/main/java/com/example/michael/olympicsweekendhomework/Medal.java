@@ -14,4 +14,6 @@ public class Medal {
     public MedalType getType() {
         return type;
     }
+
+    public int getPoints() { return type.getPoints(); }
 }

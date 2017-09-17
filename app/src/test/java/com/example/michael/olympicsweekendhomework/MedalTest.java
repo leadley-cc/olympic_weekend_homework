@@ -23,4 +23,9 @@ public class MedalTest {
     public void canGetType() {
         assertEquals(GOLD, goldMedal.getType());
     }
+
+    @Test
+    public void canGetPoints() {
+        assertEquals(3, goldMedal.getPoints());
+    }
 }
