@@ -59,4 +59,12 @@ public class AthleteTest {
         athlete.awardMedal(new Medal(GOLD));
         assertEquals(1, athlete.getMedals().size());
     }
+
+    @Test
+    public void canGenerateSkillsMap() {
+        Map<SkillType,Integer> skillsMap = Athlete.generateSkillsMap(79, 64, 44, 52, 39);
+        assertEquals(5, skillsMap.keySet().size());
+        assertTrue(skillsMap.containsKey(ACCURACY));
+        assertTrue(skillsMap.containsValue(79));
+    }
 }
